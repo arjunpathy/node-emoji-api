@@ -5,13 +5,16 @@ pipeline {
         // Define environment variables if needed
         DOCKER_IMAGE = "node-emoji-api" // Name of your Docker image
     }
+    
 
     stages {
+        
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/arjunpathy/node-emoji-api.git' 
+                git branch: 'main', url: 'https://github.com/arjunpathy/node-emoji-api.git'
             }
         }
+        
 
         stage('Build Docker Image') {
             steps {
